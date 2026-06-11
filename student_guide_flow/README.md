@@ -1,56 +1,112 @@
-# {{crew_name}} Crew
+# Student AI Guide System (Multi-Agent Flow)
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An automated, localized multi-agent ecosystem designed to assist undergraduate university students in optimizing their academic journeys, managing their personal finances, tracking overall well-being, and identifying career development opportunities. 
 
-## Installation
+Built on top of the **crewAI Flows** framework, the system utilizes an event-driven orchestrator to parse user intent and dynamically route tasks to four specialized, sub-nested Crews powered entirely by a local instance of **Llama 3.1**.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+---
 
-First, if you haven't already, install uv:
+##  Architecture & Project Structure
 
-```bash
-pip install uv
+The project consolidates multiple independent agent crews under a single parent Flow wrapper. This keeps configuration layers separate while leveraging a centralized virtual environment and unified memory/knowledge pools.
+
+```text
+student_guide_flow/
+├── .env                         # Local environment configurations & dummy validations
+├── pyproject.toml               # Unified project dependencies managed via uv
+├── src/
+│   └── student_guide_flow/
+│       ├── main.py              # THE MASTER FLOW (The central routing engine)
+│       │
+│       ├── knowledge/           # Global RAG Memory Shared by All Crews
+│       │   └── user_preference.txt  
+│       │
+│       ├── tools/               # Centralized Custom Tools Directory
+│       │   └── __init__.py
+│       │
+│       └── crews/               # Specialized Sub-Crews
+│           ├── academics_crew/  # Grades, workload optimization & time-blocking
+│           ├── finance_crew/    # Budget audits & localized savings optimization
+│           ├── opportunity_crew/# Internship scouting & campus engagement roadmaps
+│           └── well_being_crew/ # Fitness/running progressions & mindfulness check-ins
+
+##The Four Specialized Crews
+The system segments distinct student life issues into dedicated operational teams:
+
+1. Opportunity Crew
+Target Areas: Internships, Scholarships, Extracurricular Organizations, Campus Events.
+
+Agents: * Senior Career & Internship Scout: Matches a student's technical stack with upcoming professional tracks.
+
+Campus Leadership & Engagement Strategist: Formulates custom networking and hackathon involvement blueprints.
+
+2. Academics Crew
+Target Areas: Grades Maintenance, Academic Standings, Time Management, Heavy Project Deadlines.
+
+Agents:
+
+Academic Performance & Curriculum Analyst: Tracks honors trajectories (e.g., Dean's List requirements) and flags course bottlenecks.
+
+Student Time Management & Productivity Coach: Builds sustainable, high-efficiency weekly schedules.
+
+3. Finance Crew
+Target Areas: Daily Expenses, Outstanding Debts, Personal Savings Targets.
+
+Agents:
+
+Student Budgeting & Expense Auditor: Audits burn rates and isolates transactional budget leaks.
+
+Strategic Savings & Debt Mitigation Advisor: Creates capital preservation game plans for milestone goals (e.g., relocation costs).
+
+4. Overall Well Being Crew
+Target Areas: Fitness Plans, Nutrition, Mental Health, Stress Tracking.
+
+Agents:
+
+Holistic Fitness & Endurance Coach: Tailors active strength splits and cardiovascular progressions (like 5K/10K blocks).
+
+Empathetic Mindfulness & Mental Well-Being Advocate: Monitors emotional check-ins and provides validating, grounded psychological support.
+
+## Local Prerequisites & Installation
+This entire system runs locally on your machine, requiring no external paid API cloud keys.
+
+1. System Dependencies
+Python: >= 3.10 and < 3.14 (Python 3.13 recommended)
+
+Ollama: Installed and running as a background service.
+
+uv: Fast Python package installer and resolver.
+
+2. Download the Model
+Ensure your local Ollama server is hosting Llama 3.1:
+
+PowerShell
+```
+ollama pull llama3.1
 ```
 
-Next, navigate to your project directory and install the dependencies:
+3. Standard Environment Configuration
+Create an .env file in the root project directory and match this exact setup:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
+Code snippet
+```
+MODEL=ollama/llama3.1
+OPENAI_API_KEY=NA
+```
+(Note: OPENAI_API_KEY=NA is a required dummy value used to bypass framework startup package schema validations).
+
+4. Project Setup
+Run the installation script from the project root directory to automatically build the isolated .venv using uv:
+
+PowerShell
+```
 crewai install
 ```
 
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/student_guide_flow/config/agents.yaml` to define your agents
-- Modify `src/student_guide_flow/config/tasks.yaml` to define your tasks
-- Modify `src/student_guide_flow/crew.py` to add your own logic, tools and specific args
-- Modify `src/student_guide_flow/main.py` to add custom inputs for your agents and tasks
-
 ## Running the Project
+To execute the system, ensure you are in the primary project root directory containing the pyproject.toml file:
 
-To kickstart your flow and begin execution, run this from the root folder of your project:
-
-```bash
+PowerShell
+```
 crewai run
 ```
-
-This command initializes the student_guide_flow Flow as defined in your configuration.
-
-This example, unmodified, will run a content creation flow on AI Agents and save the output to `output/post.md`.
-
-## Understanding Your Crew
-
-The student_guide_flow Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
-
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
