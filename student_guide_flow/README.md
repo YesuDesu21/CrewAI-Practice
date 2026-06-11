@@ -31,17 +31,17 @@ student_guide_flow/
 │           └── well_being_crew/ # Fitness/running progressions & mindfulness check-ins
 ```
 
-##The Four Specialized Crews
+## The Four Specialized Crews
 The system segments distinct student life issues into dedicated operational teams:
 
-1. Opportunity Crew
+### 1. Opportunity Crew
 Target Areas: Internships, Scholarships, Extracurricular Organizations, Campus Events.
 
 Agents: * Senior Career & Internship Scout: Matches a student's technical stack with upcoming professional tracks.
 
 Campus Leadership & Engagement Strategist: Formulates custom networking and hackathon involvement blueprints.
 
-2. Academics Crew
+### 2. Academics Crew
 Target Areas: Grades Maintenance, Academic Standings, Time Management, Heavy Project Deadlines.
 
 Agents:
@@ -50,7 +50,7 @@ Academic Performance & Curriculum Analyst: Tracks honors trajectories (e.g., Dea
 
 Student Time Management & Productivity Coach: Builds sustainable, high-efficiency weekly schedules.
 
-3. Finance Crew
+### 3. Finance Crew
 Target Areas: Daily Expenses, Outstanding Debts, Personal Savings Targets.
 
 Agents:
@@ -59,7 +59,7 @@ Student Budgeting & Expense Auditor: Audits burn rates and isolates transactiona
 
 Strategic Savings & Debt Mitigation Advisor: Creates capital preservation game plans for milestone goals (e.g., relocation costs).
 
-4. Overall Well Being Crew
+### 4. Overall Well Being Crew
 Target Areas: Fitness Plans, Nutrition, Mental Health, Stress Tracking.
 
 Agents:
@@ -96,7 +96,7 @@ OPENAI_API_KEY=NA
 ```
 (Note: OPENAI_API_KEY=NA is a required dummy value used to bypass framework startup package schema validations).
 
-4. Project Setup
+### 4. Project Setup
 Run the installation script from the project root directory to automatically build the isolated .venv using uv:
 
 PowerShell
@@ -104,7 +104,7 @@ PowerShell
 crewai install
 ```
 
-## Running the Project
+### 5. Running the Project
 To execute the system, ensure you are in the primary project root directory containing the pyproject.toml file:
 
 PowerShell
