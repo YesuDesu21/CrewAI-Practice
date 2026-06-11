@@ -1,0 +1,1 @@
+Error: Missing required template variable 'Template variable 'user_query' not found in inputs dictionary' in description

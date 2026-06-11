@@ -1,0 +1,1 @@
+Error: Missing required template variable 'Template variable 'student_profile' not found in inputs dictionary' in description
