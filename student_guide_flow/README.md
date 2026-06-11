@@ -29,6 +29,7 @@ student_guide_flow/
 │           ├── finance_crew/    # Budget audits & localized savings optimization
 │           ├── opportunity_crew/# Internship scouting & campus engagement roadmaps
 │           └── well_being_crew/ # Fitness/running progressions & mindfulness check-ins
+```
 
 ##The Four Specialized Crews
 The system segments distinct student life issues into dedicated operational teams:
