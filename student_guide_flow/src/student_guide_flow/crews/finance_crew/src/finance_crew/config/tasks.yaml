@@ -1,0 +1,19 @@
+audit_expenses_task:
+  description: >
+    Process the raw transactional, daily spending, or budgeting data provided in the query: {user_query}. 
+    Categorize the expenses, calculate the burning rate, and check for any anomalies or areas where the budget is 
+    leaking cash.
+  expected_output: >
+    A clean financial breakdown showing total inflows, itemized outflows, and a clear warning if the student is 
+    pacing to breach their monthly budget.
+  agent: expense_tracker
+
+develop_financial_strategy_task:
+  description: >
+    Using the audited expense breakdown and information regarding family business operations or personal financial targets, 
+    construct a plan to optimize savings. Focus on setting aside funds for upcoming milestones (like internship relocation) 
+    and managing any shared financial responsibilities sustainably.
+  expected_output: >
+    A practical, step-by-step financial strategy plan detailing an ideal savings rate, debt mitigation guidelines, 
+    and clear parameters for protecting core capital.
+  agent: savings_debt_advisor

@@ -1,0 +1,20 @@
+scout_opportunities_task:
+  description: >
+    Analyze the provided student profile: {student_profile}. Based on their technical skills, programming 
+    languages, and upcoming timeline, search for and curate a targeted list of upcoming internship roles, 
+    scholarships, or training tracks. Focus heavily on R&D, data-focused, or software engineering tracks 
+    that match their specific stack.
+  expected_output: >
+    A structured Markdown list of 3-5 tailored internship or scholarship opportunities, including recommended 
+    action items for applying or networking.
+  agent: career_scouting_agent
+
+formulate_engagement_strategy_task:
+  description: >
+    Review the student's background and upcoming timeline. Formulate a strategy for leveraging local university 
+    organizations, hackathons, or committee roles. Outline how the student can maximize their leadership 
+    experience and showcase collaborative project work.
+  expected_output: >
+    A short roadmap highlighting specific types of campus events, hackathon participation strategies, and 
+    organizational roles that will strengthen their professional profile.
+  agent: campus_engagement_strategist

@@ -1,0 +1,19 @@
+build_athletic_routine_task:
+  description: >
+    Review the student's current activity levels and fitness goals provided in: {well_being_input}. Craft a physical 
+    routine that factors in limited time. Include efficient weightlifting splits or structured running progressions 
+    that act as a healthy physical release rather than an added stressor.
+  expected_output: >
+    A personalized weekly fitness blueprint outlining workout types, target running volumes, and recovery tips 
+    tailored around peak academic weeks.
+  agent: fitness_nutrition_guide
+
+evaluate_mental_health_task:
+  description: >
+    Analyze the emotional tone, stress inputs, and general wellness markers in the student's reflection or query: {user_query}. 
+    Provide an empathetic, authentic evaluation of their current stress vectors. Offer actionable mindfulness exercises, 
+    cognitive reframing techniques, or stress-reduction boundaries to help them manage heavy workloads safely.
+  expected_output: >
+    A highly supportive, grounded mental wellness check-in report. It must avoid rigid lecturing, provide genuine 
+    validation, and list 2-3 explicit boundaries or mindfulness practices to implement immediately.
+  agent: mindfulness_supporter

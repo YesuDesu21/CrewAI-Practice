@@ -1,0 +1,19 @@
+analyze_academic_standing_task:
+  description: >
+    Review the student's recent academic records and current course load provided in: {academic_data}. 
+    Assess their standing relative to maintaining high academic recognition (like a continuous Dean's List streak). 
+    Identify potential bottleneck concepts or heavy project-based courses that need early mitigation.
+  expected_output: >
+    An academic performance brief detailing current standing, honors tracking, and specific focus areas 
+    for the upcoming semester.
+  agent: performance_analyst
+
+optimize_schedule_task:
+  description: >
+    Take the academic goals from the performance analyst alongside the student's extra-curricular and organizational 
+    commitments. Build a high-yield weekly time-management blueprint. Ensure dedicated blocks for deep-work 
+    coding sessions, group project coordination, and operational responsibilities.
+  expected_output: >
+    A practical, time-blocked weekly schedule framework in Markdown, complete with specific strategies for 
+    balancing leadership duties and heavy core coursework.
+  agent: time_management_coach
